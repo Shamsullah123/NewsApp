@@ -1,0 +1,23 @@
+import React, { useState } from 'react';
+
+const Combobydate = ({ options, onSelect }) => {
+  const [selectedOption, setSelectedOption] = useState('');
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setSelectedOption(value);
+    onSelect(value);
+  };
+
+  return (
+    <select value={selectedOption} onChange={handleChange} className="bg-transparent text-white outline-none mr-4">
+      <option value="" className="text-blue-500">Select Date</option>
+      {options?.map((option, index) => (
+        <option key={index} value={option?.value || option} className="text-black" >
+          {option?.publishedAt || option}
+        </option>
+      ))}
+    </select>
+  );
+};
+
+export default Combobydate;
