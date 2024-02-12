@@ -21,17 +21,13 @@ const Thumnail = forwardRef(({ result }, ref) => {
         //     : "https://s.yimg.com/os/creatr-uploaded-images/2024-01/6edeca90-b72d-11ee-b89f-e9d774e89775"
         // }
 
-        src = "https://s.yimg.com/os/creatr-uploaded-images/2024-01/6edeca90-b72d-11ee-b89f-e9d774e89775"
-
+        src="https://s.yimg.com/os/creatr-uploaded-images/2024-01/6edeca90-b72d-11ee-b89f-e9d774e89775"
       />
       <div className="p-2">
-        <p className="max-w-screen-md truncate">{result.overview}</p>
         <h2 className="mt-2 text-2xl transition-all duration-100 ease-in-out group-hover:font-bold">
           {result.title || result.original_name}
         </h2>
         <p className="flex opacity-0 group-hover:opacity-100">
-          {result.media_type && `${result.media_type} +`}{" "}
-          {result.release_date || result.first_air_date} +{" "}
           <HandThumbUpIcon className="h-5 mx-2" /> {result.content}
         </p>
       </div>
